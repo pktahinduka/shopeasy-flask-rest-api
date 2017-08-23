@@ -1,42 +1,28 @@
-sudo: required
-dist: trusty
-
 language: python
+
 python:
-   - "3.6"
+  - "3.6"
 
 
-# command to run tests
-script:
- - protractor conf.js
+service:
+  - postgresql
 
-# - bash tests.bash
+before_install:
+  - export APP_SETTINGS="project.server.config.TestingConfig"
+  - export SECRET_KEY="justatest"
 
-addons:
-  postgresql: "9.3"
-  mariadb: '10.0'
+install:
+  - pip install -r requirements.txt
+  - pip install coveralls
 
 before_script:
-  - psql -c 'create database fscafold;' -U postgres
-  - python db.py db init
-  - python db.py db migrate
-  - python db.py db upgrade
-  - sudo apt-get update -q
-  - sudo wget -qO- https://deb.nodesource.com/setup_4.x | sudo bash -
-  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-  - sudo apt-get update
-  - sudo apt-get install -y nodejs postfix google-chrome-stable
-  - nodejs -v
-  - sudo npm install -g protractor
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 3 # give xvfb some time to start
-  #For testing purposes only
-  #- sudo apt-get install curl
-  #- curl localhost:80
-  - sudo webdriver-manager update
-  - sudo webdriver-manager start --standalone &
-  - sleep 4
-  - python run.py &
-  - sleep 3
+  - psql -c 'create database flask_jwt_auth_test;' -U postgres
+  - python manage.py db init
+  - python manage.py db migrate
+  - python manage.py db upgrade
+
+script:
+  - python manage.py cov
+
+after_success:
+  coveralls
