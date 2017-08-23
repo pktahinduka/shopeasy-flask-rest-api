@@ -3,8 +3,8 @@ dist: trusty
 
 language: python
 python:
-   - "3.4"
-   - "3.5"
+   - "3.6"
+
 
 # command to run tests
 script:
@@ -18,7 +18,6 @@ addons:
 
 before_script:
   - psql -c 'create database fscafold;' -U postgres
-  - python scaffold.py scaffold/module.yaml
   - python db.py db init
   - python db.py db migrate
   - python db.py db upgrade
