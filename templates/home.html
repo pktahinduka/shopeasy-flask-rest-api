@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>ShopEasy</title>
+
+        <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="static/css/jquery.ui.min.css" />
+        <link rel="stylesheet" href="static/css/todo.css" />
+
+		<script src="static/js/modernizr.custom.js"></script>
+		<link href="static/css/shopeasybootstrap.min.css" rel="stylesheet">
+		<link href="static/css/jquery.fancybox.css" rel="stylesheet">
+		<link href="static/css/flickity.css" rel="stylesheet" >
+		<link href="static/css/animate.css" rel="stylesheet">
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+		<link href="static/css/shopeasy_styles.css" rel="stylesheet">
+		<link href="static/css/queries.css" rel="stylesheet">
+
+    </head>
+
+    <body class="well">
+
+        <div id="container">
+                <div class="row nav-wrapper">
+						<div class="col-md-6 col-sm-6 col-xs-6 text-left">
+							<a href="#"><img src="static/css/shopeasy.png" alt="Boxify Logo"></a>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6 text-right navicon">
+							<a id="trigger-overlay" class="nav_slide_button nav-toggle" href="#"><span></span></a>
+						</div>
+					</div>
+
+            <div id="header"> My Shopping List Items </div>
+
+            <div class="task-list task-container" id="pending">
+                <h3>To Be Shopped</h3>
+                <!--<div class="todo-task">
+                    <div class="task-header">Sample Header</div>
+                    <div class="task-date">25/06/1992</div>
+                    <div class="task-description">Lorem Ipsum Dolor Sit Amet</div>
+                </div>-->
+            </div>
+
+            <div class="task-list task-container" id="inProgress">
+                <h3>Pending</h3>
+            </div>
+
+            <div class="task-list task-container" id="completed">
+                <h3>Already Shopped</h3>
+            </div>
+
+            <div class="task-list">
+                <h3>Add an item</h3>
+                <form id="todo-form">
+                    <input type="text" placeholder="Title" />
+                    <textarea placeholder="Description"></textarea>
+                    <input type="text" id="datepicker" placeholder="Due Date (dd/mm/yyyy)" />
+                    <input type="button" class="btn btn-primary" value="Add Item" onclick="todo.add();" />
+                </form>
+
+                <input type="button" class="btn btn-primary" value="Clear Data" onclick="todo.clear();" />
+
+                <div id="delete-div">
+                    Drag Here to Delete
+                </div>
+            </div>
+
+            <div style="clear:both;"></div>
+	          <script type="text/javascript" src="static/js/jquery.min.js"></script>
+            <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="static/js/jquery.ui.min.js"></script>
+            <script type="text/javascript" src="static/js/todo.js"></script>
+
+            <script type="text/javascript">
+                $( "#datepicker" ).datepicker();
+                $( "#datepicker" ).datepicker("option", "dateFormat", "dd/mm/yy");
+
+                $(".task-container").droppable();
+                $(".todo-task").draggable({ revert: "valid", revertDuration:200 });
+                todo.init();
+            </script>
+
+        </div>
+    </body>
+</html>
