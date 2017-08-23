@@ -70,4 +70,4 @@ def drop_db():
 
 
 if __name__ == '__main__':
-    manager.run()
+    manager.run(port=5002)
