@@ -5,6 +5,7 @@ coverage==4.4.1
 Flask==0.12.2
 funcsigs==1.0.2
 green==2.11.0
+gunicorn==19.7.1
 itsdangerous==0.24
 Jinja2==2.9.6
 MarkupSafe==1.0
