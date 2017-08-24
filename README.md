@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/pktahinduka/shopeasy-flask-rest-api.svg?branch=master)](https://travis-ci.org/pktahinduka/shopeasy-flask-rest-api)
 [![Code Climate](https://codeclimate.com/github/pktahinduka/shopeasy-flask-rest-api/badges/gpa.svg)](https://codeclimate.com/github/pktahinduka/shopeasy-flask-rest-api)
 [![Issue Count](https://codeclimate.com/github/pktahinduka/shopeasy-flask-rest-api/badges/issue_count.svg)](https://codeclimate.com/pktahinduka/shopeasy-flask-rest-api)
-[![Coverage Status](https://coveralls.io/repos/github/pktahinduka/shopeasy-flask-rest-api/badge.svg?branch=master)](https://coveralls.io/github/pktahinduka/shopeasy-flask-rest-api?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/pktahinduka/shopeasy-flask-rest-api/badge.svg?branch=TravisCI-Test)](https://coveralls.io/github/pktahinduka/shopeasy-flask-rest-api?branch=TravisCI-Test)
 
 # Andela-Bootcamp
 
