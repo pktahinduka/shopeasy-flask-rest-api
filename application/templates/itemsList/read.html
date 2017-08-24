@@ -1,0 +1,26 @@
+{% extends 'lists.html' %}
+{% block heading %}
+    <a class="text-muted">MY SHOPPING LISTS</a>
+    <a href="{{ url_for('create_itemsList') }}" class="btn text-muted">Add A Shopping List</a>
+{% endblock %}
+{% block list %}
+    {% block form %}
+
+    {% endblock %}
+    {% if itemsLists %}
+        {% for name, itemsList in itemsLists.items() %}
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <a href="{{ url_for('read_items',itemsList_title=name) }}" class="text-muted"><h6 class="mb-1">{{ name }}</h6></a>
+                    <div>
+                        <a href="{{ url_for('update_itemsList',title=name) }}" class="text-muted"><span class="fa fa-pencil-square-o"></span></a>
+                        <a href="{{ url_for('delete_itemsList',title=name) }}" class="text-muted"><span class="fa fa-trash"></span></a>
+                    </div>
+                </div>
+                <small>Items: {{ itemsList.get_items_count() }} Progress: {{ itemsList.get_progress() }}%</small>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="list-group-item">Added shopping lists will be displayed here.</div>
+    {% endif %}
+{% endblock %}

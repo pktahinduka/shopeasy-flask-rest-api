@@ -1,0 +1,14 @@
+{% extends 'itemsList/read.html' %}
+{% block form %}
+    <div class="card">
+        <div class="card-block">
+            <h6 class="text-muted card-title mb-4">UPDATE SHOPPING LIST</h6>
+            <form class="form-inline ml-3" method="POST">
+                <label for="itemsListname" class="mr-2 text-muted"><h6>Shopping list title</h6></label>
+                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 col-md-6" id="itemsListname" name="title" value="{{ session['itemsList_title'] }}" placeholder="Furnitures And Fittings" required>
+                <button type="submit" class="btn btn-primary mr-2"> Save </button>
+                <a href="/read_itemsList" class="btn text-muted fa fa-times"></a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
