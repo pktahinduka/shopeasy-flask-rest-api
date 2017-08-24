@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/pktahinduka/shopeasy-flask-rest-api.svg?branch=master)](https://travis-ci.org/pktahinduka/shopeasy-flask-rest-api)
-
+[![Code Climate](https://codeclimate.com/github/Sebuliba-Adrian/Andela-SLC--3/badges/gpa.svg)](https://codeclimate.com/github/Sebuliba-Adrian/Andela-SLC--3)
+[![Issue Count](https://codeclimate.com/github/Sebuliba-Adrian/Andela-SLC--3/badges/issue_count.svg)](https://codeclimate.com/github/Sebuliba-Adrian/Andela-SLC--3)
+[![Coverage Status](https://coveralls.io/repos/github/Sebuliba-Adrian/Andela-SLC--3/badge.svg?branch=master)](https://coveralls.io/github/Sebuliba-Adrian/Andela-SLC--3?branch=master)
 
 # Andela-Bootcamp
 
