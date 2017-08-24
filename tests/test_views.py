@@ -1,7 +1,7 @@
 """ This module tests all view functions  in the ShoppingList app """
 import unittest
-from ..views import register, login, USERS
-from ..models.user import User, ItemsList
+from views import register, login, USERS
+from models.user import User, ItemsList
 
 
 class TestViewMethods(unittest.TestCase):

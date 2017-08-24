@@ -1,5 +1,5 @@
 import unittest
-from application.models.shopping_list import ItemsList
+from models.shopping_list import ItemsList
 class ItemListTest(unittest.TestCase):
 
     def setUp(self):
